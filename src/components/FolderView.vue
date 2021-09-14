@@ -1,9 +1,9 @@
 <template>
   <p class="folder">{{name}}</p>
-  <template v-for="folder in folders">
+  <template v-for="(folder, index) in folders" :key="index">
     <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files"/>
   </template>
-  <template v-for="file in files">
+  <template v-for="(file, index) in files" :key="index">
     <FileView :name="file.name"/>
   </template>
 </template>
