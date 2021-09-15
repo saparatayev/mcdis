@@ -1,4 +1,7 @@
-$text: #000;
+$text: rgb(51, 48, 48);
+$blue: #1564C0;
+$grey: #9197B1;
+$transparentGrey: #9197b191;
 $transition: all .3s ease;
 
 
@@ -8,24 +11,26 @@ thead {
 		td {font-weight: bold; font-size: 14px; color: $text;}
 	}
 }
-h1 {font-size: 44x; font-weight: 100;}
-h2 {font-size: 40px; font-weight: 100;}
-h3 {font-size: 25px; font-weight: 100;}
-h4 {font-size: 18px; font-weight: 100;}
-h5 {font-size: 16px; font-weight: 100;}
-h6 {font-size: 12px; font-weight: 100;}
+h1 {font-size: 30px; font-weight: 100;}
+h2 {font-size: 25px; font-weight: 100;}
+h3 {font-size: 20px; font-weight: 100;}
+h4 {font-size: 16px; font-weight: 100;}
+h5 {font-size: 12px; font-weight: 100;}
+h6 {font-size: 8px; font-weight: 100;}
 p, td, a, input, textarea, label, span {font-size: 16px;}
 span {font-size: 11px}
 
 
-@media (max-width: 768px) {
-	h1 {font-size: 32px}
-	h2 {font-size: 24px}
+@media (max-width: 767.98px) {
+	h1 {font-size: 20px}
+	// h2 {font-size: 24px}
 	h3 {font-size: 18px}
-	h4 {font-size: 14px}
-	h5 {font-size: 11px}
-	h6 {font-size: 10px;}
+	// h4 {font-size: 14px}
+	// h5 {font-size: 11px}
+	// h6 {font-size: 10px;}
 }
+
+
 
 .p-86-0-50-0 {padding: 86px 0 50px 0;}
 
@@ -81,7 +86,7 @@ span {font-size: 11px}
 
 .pt0 {padding-top: 0 !important}
 
-.uppper-case {text-transform: uppercase;}
+.upper-case {text-transform: uppercase;}
 .text-align-center {text-align: center;}
 .text-decor-underline {text-decoration: underline;}
 
