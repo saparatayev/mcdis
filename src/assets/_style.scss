@@ -1,6 +1,26 @@
 body {
     padding: 0;
     margin: 0;
+    overflow-y: hidden;
+    // width: 100%;
+    height: 100vh;
+    background-color: pink;
+    position: relative;
+    #app {
+        // flex-direction: column;
+        // display: flex;
+        height: 100%;
+        // overflow: hidden;
+        background-color: powderblue;
+        .wrapper {
+            height: 100%;
+            background-color: gray;
+            .container {
+                height: 100%;
+                background-color: lightgreen;
+            }
+        }
+    }
 }
 
 :active, :hover, :focus {
@@ -166,6 +186,114 @@ header {
                     @include media-breakpoint-down(xs) {
                         display: block;
                     }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    .side-nav {
+        width: 300px;
+        box-sizing: border-box;
+        border-right: 1px solid $grey;
+        background-color: darken($color: #fff, $amount: 5);
+        .btns {
+            margin: 50px 0 60px 0;
+            padding: 0 30px;
+            button {
+                background-color: $blue;
+                border-radius: 6px;
+                padding: 15px 0;
+                border: none;
+                box-sizing: border-box;
+                span {
+                    color: #fff;
+                    font-size: 20px;
+                }
+                &:first-child {
+                    margin-right: 3px;
+                    min-width: 120px;
+                    width: calc(70% - 3px);
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+                &:last-child {
+                    min-width: 50px;
+                    margin-left: 3px;
+                    width: calc(30% - 3px);
+                }
+            }
+        }
+        nav {
+            ul {
+                padding: 0;
+                li {
+                    
+                    &.tree {
+                        .tree-root {
+                            position: relative;
+                            .tree-btn {
+                                position: absolute;
+                                left: 10px;
+                                top:50%;
+                                transform: translateY(-50%) rotate(90deg);
+                                display: block;
+                                transition: $transition;
+                                &:hover {
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                        
+                        ul {
+                            padding-left: 20px;
+                            &.closed {
+                                height: 0;
+                                overflow: hidden;
+                            }
+                            li {
+                                .tree-child {
+                                    position: relative;
+                                    &:hover {
+                                        background-color: darken($color: #fff, $amount: 8);
+                                    }
+                                    img {
+                                        position: absolute;
+                                        left: 10px;
+                                        top:50%;
+                                        transform: translateY(-50%) rotate(90deg);
+                                        display: block;
+                                        transition: $transition;
+                                        &:hover {
+                                            opacity: 0.5;
+                                        }
+                                    }
+                                    a {
+                                        // padding-left: 20px;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    
+                    a {
+                        display: flex;
+                        align-items: center;
+                        padding: 12px 30px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        transition: $transition;
+                        h4 {
+                            color: darken($color: $grey, $amount: 7);
+                        }
+                        img {
+                            margin-right: 14px;
+                        }
+                    }
+                    
                 }
             }
         }

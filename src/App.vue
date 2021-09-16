@@ -1,20 +1,27 @@
 <template>
   <div class="wrapper">
     <Header />
-    <FolderView name="$" :folders="folders" :files="files" />
+    <div class="container flex">
+      <Sidenav />
+      <main>
+        <FolderView name="$" :folders="folders" :files="files" />
+      </main>
+    </div>
   </div>
 </template>
 
 <script>
 import FolderView from './components/FolderView.vue'
 import Header from './components/Header.vue'
+import Sidenav from './components/Sidenav.vue'
 import data from './data/list';
 
 export default {
   name: 'App',
   components: {
     FolderView,
-    Header
+    Header,
+    Sidenav
   },
   data: () => data
 }
