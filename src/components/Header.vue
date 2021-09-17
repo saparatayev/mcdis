@@ -20,7 +20,7 @@
         <input type="text" placeholder="Search Drive">
       </form>
       <div class="user-dropdown">
-        <div @click="toggleUserDropdown" class="flex aligncenter user-info">
+        <div @click="showUserDropdown" class="flex aligncenter user-info">
           <img :src="require('@/assets/images/user16.png')" alt="icon">
           <h3>sopa.97@mail.ru</h3>
           <img :src="require('@/assets/images/down_arrow16.png')" width="10" alt="icon">
@@ -39,8 +39,12 @@
 <script>
 export default {
     methods: {
-    toggleUserDropdown () {
-      document.querySelector('.user-dropdown ul').classList.toggle('hidden')
+    showUserDropdown () {
+      let userInfoDropdown = document.querySelector('.user-dropdown ul')
+      setTimeout(() => {
+        userInfoDropdown.classList.remove('hidden')
+      }, 0);
+      // userInfoDropdown.classList.remove('d-none')
     },
     toggleSearchLayer () {
       let searcLayer = document.querySelector('header form')

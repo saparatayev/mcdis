@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" @click="hideUserDropdown">
     <Header />
     <div class="container flex">
       <Sidenav />
@@ -23,7 +23,16 @@ export default {
     Header,
     Sidenav
   },
-  data: () => data
+  data: () => data,
+  methods: {
+    hideUserDropdown (e) {
+      let userInfoDropdown = document.querySelector('.user-dropdown ul')
+
+      if(!userInfoDropdown.classList.contains('hidden')) {
+        userInfoDropdown.classList.add('hidden')
+      }
+    }
+  }
 }
 </script>
 
