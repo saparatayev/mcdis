@@ -227,8 +227,19 @@ header {
             }
         }
         nav {
+            max-height: 60%;
+            overflow-y: auto;
+            border-bottom: 1px solid $transparentGrey;
+            &::-webkit-scrollbar {
+                width: 7px;               /* ширина scrollbar */
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $transparentGrey;    /* цвет плашки */
+                border-radius: 20px;       /* закругления плашки */
+            }
             ul {
                 padding: 0;
+                margin: 0;
                 li {
                     
                     &.tree {
@@ -241,6 +252,9 @@ header {
                                 transform: translateY(-50%) rotate(90deg);
                                 display: block;
                                 transition: $transition;
+                                &.active {
+                                    transform: translateY(-50%) rotate(180deg);
+                                }
                                 &:hover {
                                     opacity: 0.5;
                                 }
@@ -249,15 +263,34 @@ header {
                         
                         ul {
                             padding-left: 20px;
+                            // overflow: hidden;
+
                             &.closed {
-                                height: 0;
-                                overflow: hidden;
+                                display: none;
                             }
                             li {
                                 .tree-child {
                                     position: relative;
-                                    &:hover {
+                                    z-index: 1;
+                                    
+                                    // when hover - show ::before as a background
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        right: 0;
+                                        top: 0;
+                                        width: 300px;
+                                        height: 100%;
                                         background-color: darken($color: #fff, $amount: 8);
+                                        z-index: -1;
+                                        opacity: 0;
+                                        transition: $transition;
+                                    }
+                                    &:hover {
+                                        &::before {
+                                            opacity: 1;
+                                        }
                                     }
                                     img {
                                         position: absolute;
@@ -266,6 +299,9 @@ header {
                                         transform: translateY(-50%) rotate(90deg);
                                         display: block;
                                         transition: $transition;
+                                        &.active {
+                                            transform: translateY(-50%) rotate(180deg);
+                                        }
                                         &:hover {
                                             opacity: 0.5;
                                         }
@@ -295,6 +331,10 @@ header {
                     }
                     
                 }
+            }
+            & > ul > li > div > a:hover,
+            & > ul > li > a:hover {
+                background-color: darken($color: #fff, $amount: 8);
             }
         }
     }

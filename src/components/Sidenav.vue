@@ -19,35 +19,13 @@
                         <h4>My Drive</h4>
                     </a>
                 </div>
-                
+
                 <ul class="closed">
                     <li>
-                        <div class="tree-child">
-                            <img @click="showTree" class="tree-btn" :src="require('@/assets/images/triangle.svg')" alt="">
-                            <a href="#">folder 1</a>
-                        </div>
-                        <ul class="closed">
-                            <li>
-                                <div class="tree-child">
-                                    <img class="tree-btn" :src="require('@/assets/images/triangle.svg')" alt="">
-                                    <a href="#">folder 1.1</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tree-child">
-                                    <img class="tree-btn" :src="require('@/assets/images/triangle.svg')" alt="">
-                                    <a href="#">folder 1.2</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="tree-child">
-                            <img class="tree-btn" :src="require('@/assets/images/triangle.svg')" alt="">
-                            <a href="#">folder 2</a>
-                        </div>
+                        <FolderView name="$" :folders="folders" :files="files" />
                     </li>
                 </ul>
+                
             </li>
             <li>
                 <a href="#">
@@ -79,14 +57,27 @@
 </template>
 
 <script>
+import FolderView from './FolderView.vue'
+import data from '../data/list';
+
 export default {
+    components: {
+        FolderView
+    },
+    data: () => data,
     methods: {
         showTree (e) {
             let elem = e.target.parentNode.nextSibling
-            if(elem.tagName === 'UL' && elem.classList.contains("closed")) {
-                elem.classList.remove('closed')
-            } else if(elem.tagName === 'UL' && !elem.classList.contains("closed")) {
-                elem.classList.add('closed')
+            if(elem) {
+                if(elem.tagName === 'UL' && elem.classList.contains("closed")) {
+                    
+                    elem.classList.remove('closed')
+                    e.target.classList.add('active')
+
+                } else if(elem.tagName === 'UL' && !elem.classList.contains("closed")) {
+                    elem.classList.add('closed')
+                    e.target.classList.remove('active')
+                }
             }
         }
     }

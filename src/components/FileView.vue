@@ -1,5 +1,7 @@
 <template>
-  <p class="file">{{name}}</p>
+  <div class="tree-child">
+    <a href="#">{{name}}</a>
+  </div>
 </template>
 
 <script>
