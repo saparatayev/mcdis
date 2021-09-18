@@ -22,7 +22,7 @@
 
                 <ul class="closed">
                     <li>
-                        <FolderView name="$" :folders="folders" :files="files" />
+                        <FolderView name="$" :folders="folders" :files="files" :layout="'sidenav'" />
                     </li>
                 </ul>
                 

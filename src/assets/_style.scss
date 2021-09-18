@@ -1,23 +1,25 @@
 body {
     padding: 0;
     margin: 0;
-    overflow-y: hidden;
+    // overflow-y: hidden;
     // width: 100%;
     height: 100vh;
-    background-color: pink;
     position: relative;
     #app {
         // flex-direction: column;
         // display: flex;
         height: 100%;
         // overflow: hidden;
-        background-color: powderblue;
         .wrapper {
             height: 100%;
-            background-color: gray;
+            // display: flex;
+            // flex-direction: column;
+            // height: 100vh;
+            background-color: blue;
             .container {
-                height: 100%;
-                background-color: lightgreen;
+                height: calc(100% - 64px);
+                // flex-grow: 2;
+                background-color: pink;
             }
         }
     }
@@ -339,3 +341,92 @@ header {
         }
     }
 }
+
+main {
+    
+    width: calc(100% - 300px); //300px is a side-nav width
+
+    .root-block {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: greenyellow;
+    
+        .header {
+            background: green
+        }
+    
+        .h100 {
+            background: yellow;
+            flex-grow: 3;
+            overflow: auto;
+            &::-webkit-scrollbar {
+                width: 7px;               /* ширина scrollbar */
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $transparentGrey;    /* цвет плашки */
+                border-radius: 20px;       /* закругления плашки */
+            }
+
+            &.news {
+                max-width: calc(100% - 65px);
+                margin: 55px auto;
+                
+                .news-item {
+                    width: calc(100% / 5);
+                    box-sizing: border-box;
+                    & * {
+                        transition: $transition;
+                    }
+                    .card {
+                        width: calc(100% - 17px);
+                        box-shadow: 0 1px 5px rgba(50, 50, 50, 0.1);
+                        background-color: $bgColor;
+                        border: 1px solid rgb(219, 215, 215);
+                        border-radius: 5px;
+                        margin: 9px auto;
+                        display: block;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        .card-body {
+                            & > img {
+                                margin: 0 auto;
+                                padding: 38px 26px;
+                            }
+                            .resource-name {
+                                background-color: #fff;
+                                padding: 16px;
+                                img {
+                                    display: block;
+                                    margin-right: 12px;
+                                }
+                                h5 {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+                        }
+                        &:hover {
+                            border: 1px solid $blue;
+                            .card-body {
+                                .resource-name {
+                                    background-color: $bgColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .footer {
+            background: red
+        }
+    }
+    
+}
+
+
+
+

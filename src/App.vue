@@ -4,7 +4,7 @@
     <div class="container flex">
       <Sidenav />
       <main>
-        <FolderView name="$" :folders="folders" :files="files" />
+        <FolderView name="$" :folders="folders" :files="files" :layout="'main'" />
       </main>
     </div>
   </div>
