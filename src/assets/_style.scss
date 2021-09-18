@@ -427,7 +427,8 @@ main {
         }
     
         .h100 {
-            flex-grow: 3;
+            // flex-grow: 3;
+            min-height: calc(100vh - 163px);
             overflow: auto;
             &::-webkit-scrollbar {
                 width: 7px;               /* ширина scrollbar */
@@ -441,10 +442,10 @@ main {
                 width: calc(100% - 65px);
                 margin: 0 auto;
                 @include media-breakpoint-down(md) {
-                    max-width: calc(100% - 30px);
+                    width: calc(100% - 30px);
                 }
                 @include media-breakpoint-down(xs) {
-                    max-width: calc(100% - 10px);
+                    width: calc(100% - 10px);
                 }
                 
                 .cards-item-wraper {
