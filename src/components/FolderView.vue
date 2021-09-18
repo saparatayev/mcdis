@@ -17,11 +17,11 @@
   
   <div v-if="layout === 'main'" class="root-block">
 
-    <div class="header">Верхний блок</div>
+    <div class="header"><p>{{name}}</p></div>
 
-    <div class="h100 news flex flex-wrap">
+    <div class="h100 cards-container flex flex-wrap">
 
-      <div v-for="(folder, index) in folders" :key="index" class="news-item">
+      <div v-for="(folder, index) in folders" :key="index" class="cards-item-wraper">
         <a href="#" class="card">
           <div class="card-body">
             <img :src="require('@/assets/images/folder64.png')" alt="" class="d-block">
@@ -32,7 +32,7 @@
           </div>
         </a>
       </div>
-      <div v-for="(file, index) in files" :key="index" class="news-item">
+      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
         <a href="#" class="card">
           <div class="card-body">
             <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
@@ -44,7 +44,7 @@
         </a>
       </div>
       <!-- a lot of resources for testing overflow -->
-      <div v-for="(file, index) in files" :key="index" class="news-item">
+      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
         <a href="#" class="card">
           <div class="card-body">
             <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
@@ -55,7 +55,7 @@
           </div>
         </a>
       </div>
-      <div v-for="(file, index) in files" :key="index" class="news-item">
+      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
         <a href="#" class="card">
           <div class="card-body">
             <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
@@ -66,7 +66,7 @@
           </div>
         </a>
       </div>
-      <div v-for="(file, index) in files" :key="index" class="news-item">
+      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
         <a href="#" class="card">
           <div class="card-body">
             <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
@@ -80,7 +80,7 @@
       <!--  -->
     </div>
 
-    <div class="footer">Bottom блок</div>
+    <div class="footer"><p>Sapar Atayev 2021</p></div>
   </div>
   
 

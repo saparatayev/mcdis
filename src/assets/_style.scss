@@ -15,11 +15,9 @@ body {
             // display: flex;
             // flex-direction: column;
             // height: 100vh;
-            background-color: blue;
             .container {
                 height: calc(100% - 64px);
                 // flex-grow: 2;
-                background-color: pink;
             }
         }
     }
@@ -198,8 +196,8 @@ header {
     .side-nav {
         width: 300px;
         box-sizing: border-box;
-        border-right: 1px solid $grey;
-        background-color: darken($color: #fff, $amount: 5);
+        border-right: 1px solid $border;
+        background-color: $bgColor;
         .btns {
             margin: 50px 0 60px 0;
             padding: 0 30px;
@@ -231,7 +229,7 @@ header {
         nav {
             max-height: 60%;
             overflow-y: auto;
-            border-bottom: 1px solid $transparentGrey;
+            border-bottom: 1px solid $border;
             &::-webkit-scrollbar {
                 width: 7px;               /* ширина scrollbar */
             }
@@ -350,14 +348,16 @@ main {
         display: flex;
         flex-direction: column;
         height: 100%;
-        background-color: greenyellow;
     
         .header {
-            background: green
+            p {
+                max-width: calc(100% - 65px);
+                margin: 20px auto;
+            }
+            border-bottom: 1px solid $border;
         }
     
         .h100 {
-            background: yellow;
             flex-grow: 3;
             overflow: auto;
             &::-webkit-scrollbar {
@@ -368,11 +368,11 @@ main {
                 border-radius: 20px;       /* закругления плашки */
             }
 
-            &.news {
+            &.cards-container {
                 max-width: calc(100% - 65px);
-                margin: 55px auto;
+                margin: 0 auto;
                 
-                .news-item {
+                .cards-item-wraper {
                     width: calc(100% / 5);
                     box-sizing: border-box;
                     & * {
@@ -382,7 +382,7 @@ main {
                         width: calc(100% - 17px);
                         box-shadow: 0 1px 5px rgba(50, 50, 50, 0.1);
                         background-color: $bgColor;
-                        border: 1px solid rgb(219, 215, 215);
+                        border: 1px solid $border;
                         border-radius: 5px;
                         margin: 9px auto;
                         display: block;
@@ -421,7 +421,11 @@ main {
         }
     
         .footer {
-            background: red
+            border-top: 1px solid $border;
+            padding: 10px 40px;
+            p {
+                color: $grey;
+            }
         }
     }
     
