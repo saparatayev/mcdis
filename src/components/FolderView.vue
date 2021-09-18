@@ -44,39 +44,7 @@
         </a>
       </div>
       <!-- a lot of resources for testing overflow -->
-      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
-        <a href="#" class="card">
-          <div class="card-body">
-            <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
-            <div class="resource-name flex aligncenter">
-              <img :src="require('@/assets/images/file16.png')" alt="">
-              <h5>{{file.name}}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
-        <a href="#" class="card">
-          <div class="card-body">
-            <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
-            <div class="resource-name flex aligncenter">
-              <img :src="require('@/assets/images/file16.png')" alt="">
-              <h5>{{file.name}}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
-        <a href="#" class="card">
-          <div class="card-body">
-            <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
-            <div class="resource-name flex aligncenter">
-              <img :src="require('@/assets/images/file16.png')" alt="">
-              <h5>{{file.name}}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
+      
       <!--  -->
     </div>
 

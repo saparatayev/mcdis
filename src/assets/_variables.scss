@@ -22,14 +22,22 @@ h6 {font-size: 8px; font-weight: 100;}
 p, td, a, input, textarea, label, span {font-size: 16px;}
 span {font-size: 16px}
 
+@media (max-width: 991.98px) {
+	h1 {font-size: 20px}
+	h2 {font-size: 19px}
+	h3 {font-size: 18px}
+	h4 {font-size: 14px}
+	h5 {font-size: 11px}
+	h6 {font-size: 6px;}
+}
 
 @media (max-width: 767.98px) {
-	h1 {font-size: 20px}
-	// h2 {font-size: 24px}
-	h3 {font-size: 18px}
+	// h1 {font-size: 20px}
+	// h2 {font-size: 19px}
+	h3 {font-size: 14px}
 	// h4 {font-size: 14px}
 	// h5 {font-size: 11px}
-	// h6 {font-size: 10px;}
+	// h6 {font-size: 6px;}
 }
 
 
@@ -124,13 +132,12 @@ span {font-size: 16px}
 
 
 $grid-breakpoints: (
-	xs: 0, //@include media-breakpoint-down(xs)
-	sm: 576px, //@include media-breakpoint-down(sm)
-	md: 768px, //@include media-breakpoint-down(md)
-	lg: 992px, //@include media-breakpoint-down(lg)
-	xl: 1200px, //@include media-breakpoint-down(xl)
-	xxl: 1367px, //@include media-breakpoint-down(xxl)
-  	xxxl: 1920px
+	xs: 0, //@include media-breakpoint-down(xs) == 575.98...0
+	sm: 576px, //@include media-breakpoint-down(sm) == 767.98...576
+	md: 768px, //@include media-breakpoint-down(md) == 991.98...768
+	lg: 992px, //@include media-breakpoint-down(lg) == 1199.98...992
+	xl: 1200px, //@include media-breakpoint-down(xl) == 1399.98...1200
+	xxl: 1400px, //@include media-breakpoint-down(xxl) == ...1400
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");

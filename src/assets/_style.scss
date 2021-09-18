@@ -18,6 +18,9 @@ body {
             .container {
                 height: calc(100% - 64px);
                 // flex-grow: 2;
+                @include media-breakpoint-down(sm) {
+                    height: calc(100% - 50px);
+                }
             }
         }
     }
@@ -65,7 +68,7 @@ header {
         }
         .close-btn-container {
             border: 1px solid #fff;
-            padding: 10px;
+            padding: 4px;
             border-radius: 50%;
             display: none;
             &.displayed {
@@ -175,6 +178,9 @@ header {
                 a {
                     display: block;
                     padding: 10px;
+                    @include media-breakpoint-down(xs) {
+                        font-size: 14px;
+                    }
                     &:hover {
                         background-color: darken($color: #fff, $amount: 10);
                     }
@@ -182,7 +188,7 @@ header {
                 &.mobile-user-email {
                     display: none;
                     padding: 10px;
-                    border-bottom: 1px solid $grey;
+                    border-bottom: 1px solid $border;
                     @include media-breakpoint-down(xs) {
                         display: block;
                     }
@@ -198,31 +204,72 @@ header {
         box-sizing: border-box;
         border-right: 1px solid $border;
         background-color: $bgColor;
+        @include media-breakpoint-down(lg) {
+            width: 250px;
+        }
+        @include media-breakpoint-down(md) {
+            width: 60px;
+        }
+        @include media-breakpoint-down(xs) {
+            width: 45px;
+        }
+        
         .btns {
             margin: 50px 0 60px 0;
             padding: 0 30px;
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                padding: 0;
+                align-items: center;
+            }
+            
             button {
                 background-color: $blue;
                 border-radius: 6px;
                 padding: 15px 0;
                 border: none;
                 box-sizing: border-box;
+                @include media-breakpoint-down(md) {
+                    padding: 5px;
+                }
                 span {
                     color: #fff;
                     font-size: 20px;
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
                 }
                 &:first-child {
                     margin-right: 3px;
                     min-width: 120px;
                     width: calc(70% - 3px);
+                    @include media-breakpoint-down(md) {
+                        min-width: 30px;
+                        width: calc(25% - 3px);
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                    }
                     img {
                         margin-right: 5px;
+                        @include media-breakpoint-down(md) {
+                            margin-right: 0;
+                        }
                     }
                 }
                 &:last-child {
                     min-width: 50px;
                     margin-left: 3px;
                     width: calc(30% - 3px);
+                    @include media-breakpoint-down(md) {
+                        margin-left: 0;
+                        min-width: 30px;
+                        width: calc(25% - 3px);
+                    }
+                }
+                &:first-child, &:last-child {
+                    @include media-breakpoint-down(xs) {
+                        min-width: 26px;
+                    }
                 }
             }
         }
@@ -252,6 +299,9 @@ header {
                                 transform: translateY(-50%) rotate(90deg);
                                 display: block;
                                 transition: $transition;
+                                @include media-breakpoint-down(md) {
+                                    display: none;
+                                }
                                 &.active {
                                     transform: translateY(-50%) rotate(180deg);
                                 }
@@ -322,11 +372,21 @@ header {
                         width: 100%;
                         box-sizing: border-box;
                         transition: $transition;
+                        @include media-breakpoint-down(md) {
+                            padding: 12px 0;
+                            justify-content: center;
+                        }
                         h4 {
                             color: darken($color: $grey, $amount: 7);
+                            @include media-breakpoint-down(md) {
+                                display: none;
+                            }
                         }
                         img {
                             margin-right: 14px;
+                            @include media-breakpoint-down(md) {
+                                margin-right: 0;
+                            }
                         }
                     }
                     
@@ -343,6 +403,15 @@ header {
 main {
     
     width: calc(100% - 300px); //300px is a side-nav width
+    @include media-breakpoint-down(lg) {
+        width: calc(100% - 250px); //250px is a side-nav width
+    }
+    @include media-breakpoint-down(md) {
+        width: calc(100% - 60px);
+    }
+    @include media-breakpoint-down(xs) {
+        width: calc(100% - 45px);
+    }
 
     .root-block {
         display: flex;
@@ -371,9 +440,24 @@ main {
             &.cards-container {
                 max-width: calc(100% - 65px);
                 margin: 0 auto;
+                @include media-breakpoint-down(md) {
+                    max-width: calc(100% - 30px);
+                }
+                @include media-breakpoint-down(xs) {
+                    max-width: calc(100% - 10px);
+                }
                 
                 .cards-item-wraper {
                     width: calc(100% / 5);
+                    @include media-breakpoint-down(lg) {
+                        width: calc(100% / 4);
+                    }
+                    @include media-breakpoint-down(sm) {
+                        width: calc(100% / 3);
+                    }
+                    @include media-breakpoint-down(xs) {
+                        width: calc(100% / 2);
+                    }
                     box-sizing: border-box;
                     & * {
                         transition: $transition;
@@ -392,10 +476,17 @@ main {
                             & > img {
                                 margin: 0 auto;
                                 padding: 38px 26px;
+                                @include media-breakpoint-down(xs) {
+                                    padding: 15px 26px;
+                                    width: 26%;
+                                }
                             }
                             .resource-name {
                                 background-color: #fff;
                                 padding: 16px;
+                                @include media-breakpoint-down(xs) {
+                                    padding: 7px;
+                                }
                                 img {
                                     display: block;
                                     margin-right: 12px;
