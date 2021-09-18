@@ -43,7 +43,7 @@
           </div>
         </a>
       </div>
-      <!-- a lot of resources for testing overflow -->
+      <!-- a lot of resources (files & folders) for testing overflow -->
       
       <!--  -->
     </div>

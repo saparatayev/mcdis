@@ -438,7 +438,7 @@ main {
             }
 
             &.cards-container {
-                max-width: calc(100% - 65px);
+                width: calc(100% - 65px);
                 margin: 0 auto;
                 @include media-breakpoint-down(md) {
                     max-width: calc(100% - 30px);
