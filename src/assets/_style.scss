@@ -284,19 +284,12 @@ header {
                 background-color: $transparentGrey;    /* цвет плашки */
                 border-radius: 20px;       /* закругления плашки */
             }
-            &::-moz-scrollbar {
-                width: 7px;               /* ширина scrollbar */
-            }
-            &::-moz-scrollbar-thumb {
-                background-color: $transparentGrey;    /* цвет плашки */
-                border-radius: 20px;       /* закругления плашки */
-            }
-            
+
             // firefox
             scrollbar-color: $transparentGrey transparent;
             scrollbar-width: thin;
-            // 
-
+            //
+            
             ul {
                 padding: 0;
                 margin: 0;
@@ -442,6 +435,13 @@ main {
         .h100 {
             flex-grow: 3;
             overflow: auto;
+            &::-webkit-scrollbar {
+                width: 7px;               /* ширина scrollbar */
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $transparentGrey;    /* цвет плашки */
+                border-radius: 20px;       /* закругления плашки */
+            }
 
             // firefox
             scrollbar-color: $transparentGrey transparent;
@@ -461,7 +461,7 @@ main {
                 .cards-container-inner {
                     height: fit-content;
                     width: 100%;
-
+                    
                     .cards-item-wraper {
                         width: calc(100% / 5);
                         @include media-breakpoint-down(lg) {
