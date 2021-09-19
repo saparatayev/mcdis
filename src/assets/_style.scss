@@ -427,8 +427,7 @@ main {
         }
     
         .h100 {
-            // flex-grow: 3;
-            min-height: calc(100vh - 163px);
+            flex-grow: 3;
             overflow: auto;
             &::-webkit-scrollbar {
                 width: 7px;               /* ширина scrollbar */
@@ -447,68 +446,75 @@ main {
                 @include media-breakpoint-down(xs) {
                     width: calc(100% - 10px);
                 }
-                
-                .cards-item-wraper {
-                    width: calc(100% / 5);
-                    @include media-breakpoint-down(lg) {
-                        width: calc(100% / 4);
-                    }
-                    @include media-breakpoint-down(sm) {
-                        width: calc(100% / 3);
-                    }
-                    @include media-breakpoint-down(xs) {
-                        width: calc(100% / 2);
-                    }
-                    box-sizing: border-box;
-                    & * {
-                        transition: $transition;
-                    }
-                    .card {
-                        width: calc(100% - 17px);
-                        box-shadow: 0 1px 5px rgba(50, 50, 50, 0.1);
-                        background-color: $bgColor;
-                        border: 1px solid $border;
-                        border-radius: 5px;
-                        margin: 9px auto;
-                        display: block;
-                        box-sizing: border-box;
-                        overflow: hidden;
-                        .card-body {
-                            & > img {
-                                margin: 0 auto;
-                                padding: 38px 26px;
-                                @include media-breakpoint-down(xs) {
-                                    padding: 15px 26px;
-                                    width: 26%;
-                                }
-                            }
-                            .resource-name {
-                                background-color: #fff;
-                                padding: 16px;
-                                @include media-breakpoint-down(xs) {
-                                    padding: 7px;
-                                }
-                                img {
-                                    display: block;
-                                    margin-right: 12px;
-                                }
-                                h5 {
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                }
-                            }
+
+                .cards-container-inner {
+                    height: fit-content;
+                    width: 100%;
+                    
+                    .cards-item-wraper {
+                        width: calc(100% / 5);
+                        @include media-breakpoint-down(lg) {
+                            width: calc(100% / 4);
                         }
-                        &:hover {
-                            border: 1px solid $blue;
+                        @include media-breakpoint-down(sm) {
+                            width: calc(100% / 3);
+                        }
+                        @include media-breakpoint-down(xs) {
+                            width: calc(100% / 2);
+                        }
+                        box-sizing: border-box;
+                        & * {
+                            transition: $transition;
+                        }
+                        .card {
+                            width: calc(100% - 17px);
+                            box-shadow: 0 1px 5px rgba(50, 50, 50, 0.1);
+                            background-color: $bgColor;
+                            border: 1px solid $border;
+                            border-radius: 5px;
+                            margin: 9px auto;
+                            display: block;
+                            box-sizing: border-box;
+                            overflow: hidden;
                             .card-body {
+                                & > img {
+                                    margin: 0 auto;
+                                    padding: 38px 26px;
+                                    @include media-breakpoint-down(xs) {
+                                        padding: 15px 26px;
+                                        width: 26%;
+                                    }
+                                }
                                 .resource-name {
-                                    background-color: $bgColor;
+                                    background-color: #fff;
+                                    padding: 16px;
+                                    @include media-breakpoint-down(xs) {
+                                        padding: 7px;
+                                    }
+                                    img {
+                                        display: block;
+                                        margin-right: 12px;
+                                    }
+                                    h5 {
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+                            }
+                            &:hover {
+                                border: 1px solid $blue;
+                                .card-body {
+                                    .resource-name {
+                                        background-color: $bgColor;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                
+                
             }
         }
     

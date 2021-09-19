@@ -21,31 +21,34 @@
 
     <div class="h100 cards-container flex flex-wrap">
 
-      <div v-for="(folder, index) in folders" :key="index" class="cards-item-wraper">
-        <a href="#" class="card">
-          <div class="card-body">
-            <img :src="require('@/assets/images/folder64.png')" alt="" class="d-block">
-            <div class="resource-name flex aligncenter">
-              <img :src="require('@/assets/images/folder16.png')" alt="">
-              <h5>{{folder.name}}</h5>
+      <div class="flex flex-wrap cards-container-inner">
+        <div v-for="(folder, index) in folders" :key="index" class="cards-item-wraper">
+          <a href="#" class="card">
+            <div class="card-body">
+              <img :src="require('@/assets/images/folder64.png')" alt="" class="d-block">
+              <div class="resource-name flex aligncenter">
+                <img :src="require('@/assets/images/folder16.png')" alt="">
+                <h5>{{folder.name}}</h5>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-      <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
-        <a href="#" class="card">
-          <div class="card-body">
-            <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
-            <div class="resource-name flex aligncenter">
-              <img :src="require('@/assets/images/file16.png')" alt="">
-              <h5>{{file.name}}</h5>
+          </a>
+        </div>
+        <div v-for="(file, index) in files" :key="index" class="cards-item-wraper">
+          <a href="#" class="card">
+            <div class="card-body">
+              <img :src="require('@/assets/images/file64.png')" alt="" class="d-block element-3">
+              <div class="resource-name flex aligncenter">
+                <img :src="require('@/assets/images/file16.png')" alt="">
+                <h5>{{file.name}}</h5>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <!-- a lot of resources (files & folders) for testing overflow -->
+        
+        <!--  -->
       </div>
-      <!-- a lot of resources (files & folders) for testing overflow -->
       
-      <!--  -->
     </div>
 
     <div class="footer"><p>Sapar Atayev 2021</p></div>
